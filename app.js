@@ -6,7 +6,6 @@ function changeCursor(category){
 function handleTickets(ticketCategory, isIncrease){
     const ticketCategoryInput = document.getElementById(ticketCategory + "-count")
     const ticketCategoryCount = parseInt(ticketCategoryInput.value)
-    // const firstClassNewCount = firstClassCount - 1
     let ticketCategoryNewCount = ticketCategoryCount
     if (isIncrease == true){
         ticketCategoryNewCount = ticketCategoryCount + 1
