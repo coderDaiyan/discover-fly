@@ -13,6 +13,7 @@ function handleTickets(ticketCategory, isIncrease){
         ticketCategoryNewCount = ticketCategoryCount - 1
     }
     ticketCategoryInput.value = ticketCategoryNewCount
+
     calculateTotal()
 }
 
@@ -38,6 +39,21 @@ function getInputValue(ticketCategory){
     return ticketCategoryCount;
 }
 
+function zeroValueError(){
+    let economyCount = getInputValue("economy")
+    let firstClassCount = getInputValue("firstClass")
+    if(economyCount == 0 && firstClassCount == 0){
+        alert("Error: Proper Information Required")
+        document.getElementById("booking-area").style.display = "block"
+        document.getElementById("booking-text").style.display = "block"
+        document.getElementById("after-booking").style.display = "none"
+    } else if(economyCount > 0 || firstClassCount > 0){
+        document.getElementById("booking-area").style.display = "none"
+        document.getElementById("booking-text").style.display = "none"
+        document.getElementById("after-booking").style.display = "block"
+    }
+}
+
 // Economy Seat Count
 changeCursor("economy")
 document.getElementById("economy-increase").addEventListener('click', function () {
@@ -60,7 +76,10 @@ document.getElementById("book-now").addEventListener('click', function(){
     document.getElementById("booking-area").style.display = "none"
     document.getElementById("booking-text").style.display = "none"
     document.getElementById("after-booking").style.display = "block"
+    zeroValueError()
 })
+
+
 // function handleEconomySeat(isIncrease) {
 //     const economyInput = document.getElementById("economy-count")
 //     const economyCount = parseInt(economyInput.value)
