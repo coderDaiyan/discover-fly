@@ -11,6 +11,9 @@
         rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,8 +31,8 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
-            <h3>Booking Flights</h3>
+        <div id="booking-area" class="booking-form">
+            <h3>Book your flight</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
                 <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
@@ -40,7 +43,7 @@
             </div>
             <div class="inputs">
                 <div class="input-group">
-                    <label" for="">Departure</label>
+                    <label for="">Departure</label>
                     <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
@@ -51,20 +54,20 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="firstClass-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <p> <span id="firstClass-increase">+</span> <span id="firstClass-decrease">-</span></p>
                 </div>
             </div>
-            
+
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input id="economy-quantity" class="inp-style inp-width" type="number" value="0">
+                    <input id="economy-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p><span id="economy-increase">+</span>  <span id="economy-decrease">-</span> </p>
+                    <p><span id="economy-increase">+</span> <span id="economy-decrease">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -73,16 +76,16 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$ <span id="subtotal">0</span></p>
                     </div>
                 </div>
 
                 <div class="amount">
                     <div class="left">
-                        <p>Charge 10% VAT</p>
+                        <p>VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p>$ <span id="vat-amount">0</span></p>
                     </div>
                 </div>
                 <hr> <br>
@@ -91,23 +94,33 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p>$ <span id="total-amount">0</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
 
-        <div class="booking-content">
+        <div id="booking-text" class="booking-content">
             <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+                voluptatibus quam</p>
         </div>
-    </section>
+        </section>
+        <section>
+            <!-- After booking -->
+            <div id="after-booking" class="booking-content">
+                <h1>Thank you! <br> your booking is confirmed</h1>
+                <p>We have confirmed your booking.You will get a mail from us about you ticket and other things. If you have any query...please mail us at: <b>support@example.com</b> . We will reach you as soon as possible. Until then, pack your backpack and ready to fly ✈✈ </p>
+            </div>
+        </section>
 
-    <!-- Script -->
-    <script src="app.js"></script>
 
-    <!--Thank You-->
+        <!-- Script -->
+        <script src="app.js"></script>
+
+        <!--Thank You-->
 </body>
 
 </html>
